@@ -36,7 +36,7 @@ class Main {
             case 16:
                 return conversion_to_16(num);
             default:
-                return "Вводимой конверсии не существует ((";
+                return "Конверсия в данную систему счисления не производиться((";
         }
     }
 
