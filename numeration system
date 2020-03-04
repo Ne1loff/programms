@@ -42,10 +42,13 @@ class Main {
 
     public static String conversion_to_2 (String num) {
         double d = Double.parseDouble(num);
-        int i = 0, j;
+        int i = 0, j, str = 10;
         String conv_num ="";
         j = (int) d;
-        conv_num += j + ".";
+        d -= j;
+        conv_num +=".";
+        BigInteger a = new BigInteger(String.valueOf(j), str);
+        String z = a.toString(Integer.parseInt("2"));
 
         while (d != 0 && i != 60) {
             d *= 1 << 1;
@@ -54,8 +57,8 @@ class Main {
             d -= j;
             i++;
         }
-        System.out.println(conv_num.length());
-        return conv_num;
+        z += conv_num;
+        return z;
     }
 
     public static String conversion_to_8 (String num) {
@@ -72,7 +75,6 @@ class Main {
             d -= j;
             i++;
         }
-        System.out.println("d - "+ d + "\ti - " + i + "\tlength" + conv_num.length());
         return conv_num;
     }
 
@@ -91,7 +93,6 @@ class Main {
             d -= j;
             i++;
         }
-        System.out.println("d - "+ d + "\ti - " + i + "\tlength" + conv_num.length());
         return conv_num;
     }
 }
